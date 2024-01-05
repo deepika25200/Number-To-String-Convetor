@@ -1,0 +1,11 @@
+<h1>Number conveter</h1>
+<article class="number-input-container">
+  <label for="numberInput">Enter a number you want to convert to words</label>
+  <input placeholder="enter number to convert" type="number" id="numberInput" [(ngModel)]="inputNumber" /><br>
+  <p *ngIf="inputNumber <= 1000000">{{ inputNumber | numberToString }}</p>
+  <p *ngIf="inputNumber > 1000000">Out of limit</p>
+  <button (click)="convertToWord()">Convert</button>
+</article>
+<div *ngIf="outputWord !== undefined" class="output-container">
+  <p>{{inputNumber}} in words is : {{ outputWord }}</p>
+</div>
